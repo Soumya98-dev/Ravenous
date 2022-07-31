@@ -6,6 +6,7 @@ import "./SearchBar.css";
 //     Highest Rated
 //     Most Reviewed
 
+//*** FROM THE YELP API
 const sortByOptions = {
   "Best Match": "best_match",
   "Highest Rated": "rating",
@@ -20,14 +21,17 @@ class SearchBar extends React.Component {
   renderSortByOptions() {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption]; //*** GETTING THE VALUES
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return (
+      <li key={sortByOptionValue}>
+        {sortByOption}
+      </li>);
     });
   }
   render() {
     return (
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
-          <ul>{this.renderSortByOptions}</ul>
+          <ul>{this.renderSortByOptions()}</ul>
         </div>
         <div className="SearchBar-fields">
           <input placeholder="Search Businesses" />

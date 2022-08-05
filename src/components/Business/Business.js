@@ -1,8 +1,6 @@
 import React from "react";
 import "./Business.css";
 
-
-
 //*** BUSINESS COMPONENT
 class Business extends React.Component {
   render() {

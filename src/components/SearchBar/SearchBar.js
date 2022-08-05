@@ -15,6 +15,10 @@ const sortByOptions = {
 
 //*** SEARCH BAR COMPONENT
 class SearchBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
   //*** Dynamically create the list items needed to display the sort options
   //*** Iterate through the keys & values of the "sortByOptions" object & return a list item
   //*** list items: keys -> attribute & value -> content

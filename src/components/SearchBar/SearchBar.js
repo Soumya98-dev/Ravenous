@@ -28,28 +28,31 @@ class SearchBar extends React.Component {
   //***returns the current CSS class for a sorting option.This method will prove useful in providing visual feedback to users
   getSortByClass(sortByOption) {
     if (this.state.sortBy === sortByOption) {
+      //*** WE ARE ATTACHING "active" CLASS TO THE SORT OPTION CLICKED
       return "active";
     } else {
       return "";
     }
   }
+  //*** THIS METHOD IS SETTING THE STATE OF THE SORT OPTIONS
   handleSortByChange(sortByOption) {
     this.setState({
       sortBy: sortByOption,
     });
   }
+  //*** THIS METHOD IS SETTING THE STATE OF THE "Search Business" TEXT FIELD
   handleTermChange(event) {
     this.setState({
       term: event.target.value,
     });
   }
-
+//*** THIS METHOD IS SETTING THE STATE OF THE "WHERE" TEXT FIELD
   handleLocationChange(event) {
     this.setState({
       location: event.target.value,
     });
   }
-
+//*** THIS METHOD IS FOR THE "Let's Go" button
   handleSearch(event) {
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     event.preventDefault();
@@ -66,8 +69,7 @@ class SearchBar extends React.Component {
         <li
           onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
           className={this.getSortByClass(sortByOptionValue)}
-          key={sortByOptionValue}
-        >
+          key={sortByOptionValue}>
           {sortByOption}
         </li>
       );
@@ -83,7 +85,7 @@ class SearchBar extends React.Component {
         <div className="SearchBar-fields">
           <input
             onChange={this.handleTermChange}
-            placeholder="Search Businesses"
+            placeholder="Search Businesses..."
           />
           <input onChange={this.handleLocationChange} placeholder="Where?" />
         </div>

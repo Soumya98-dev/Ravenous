@@ -1,6 +1,3 @@
-import React from 'react';
-import business from "../components/Business/Business";
-
 const apiKey = 'd8ENaeJ3NN_R8szMmxcputiT7n47HvoawCAm8n7mwlk9Sch1D9Ot1wihtb6gEgBznBDG9LMmQVUfcIjhShAjmBa91gez1UkktUiIKmj-SbAohDMdSiyIoWjYIvnwYnYx';
 
 const Yelp = {
